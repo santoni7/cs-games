@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<params>
+    <LevelName>Go on!</LevelName>
+    <LevelCountNumber>4</LevelCountNumber>
+    <TimeForBonusMs>60000</TimeForBonusMs>
+    <LevelFile>level.lvl</LevelFile>
+    <Image>0</Image>
+    <ImageFile></ImageFile>
+    <BackgroundColor>
+        <Red>100</Red>
+        <Green>149</Green>
+        <Blue>237</Blue>
+        <Alpha>255</Alpha>
+    </BackgroundColor>
+    <LevelGravity>0,2</LevelGravity>
+    <EnemyGravity>0,2</EnemyGravity>
+    <SpawnPoint>
+        <X>0</X>
+        <Y>0</Y>
+    </SpawnPoint>
+    <HeroSpeedK>2</HeroSpeedK>
+    <EnemySpeedK>1</EnemySpeedK>
+    <LevelDesc>Соберите все алмазы для прохождения игры.</LevelDesc>
+    
+    
+    
+</params>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>99ba4d9f-9a82-475d-868c-76132e7c92e5</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SmartPackmans</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\DrawableGameObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\GameObjectCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\InputSingletone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\Interfaces.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\Screen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\ScreenManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\SpriteSheetCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameSystem\TextureAtlasImporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\MainMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\MainScreen\Asteroid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\MainScreen\MainScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\MainScreen\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\PauseScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\ResultsScreen.cs" />
+  </ItemGroup>
+</Project>
