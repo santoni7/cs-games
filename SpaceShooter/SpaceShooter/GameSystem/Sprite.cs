@@ -85,22 +85,11 @@ namespace SmartPackmans.GameSystem
         public string Tag { get; set; }
         public void Draw(Vector2 position, SpriteBatch spriteBatch, GameTime gameTime)
         {
-//            Vector2 scale = new Vector2(Size.X/SourceRectangle.Width, Size.Y/SourceRectangle.Height);
-//            spriteBatch.Draw(Texture, position, null, SourceRectangle, Origin, DefaultRotation + Rotation, scale,
-//                Color.White);
-
-
-//#if DEBUG
-//            DrawDebug(position, spriteBatch);
-//#endif
             Draw(position, Rotation, spriteBatch, gameTime);
         }
 
         public void Draw(Vector2 position, float rotation, SpriteBatch spriteBatch, GameTime gameTime)
         {
-            //Vector2 scale = new Vector2(Size.X / SourceRectangle.Width, Size.Y / SourceRectangle.Height);
-            //spriteBatch.Draw(Texture, position, null, SourceRectangle, Origin, DefaultRotation + rotation, scale,
-            //    Color.White);
             spriteBatch.Draw(Texture, null, GetRectangle(position), SourceRectangle, Origin, DefaultRotation + rotation,
                 null, Color.White);
 
@@ -128,20 +117,10 @@ namespace SmartPackmans.GameSystem
         public Rectangle GetRectangle(Vector2 position)
         {
             return new Rectangle((int)position.X, (int)position.Y, (int)Size.X, (int)Size.Y);
-            //var rotation = Matrix.CreateRotationZ(DefaultRotation + Rotation);
-            //var translateTo = Matrix.CreateTranslation(new Vector3(position, 0));
-            //var translateBack = Matrix.CreateTranslation(-new Vector3(position, 0));
-            //var combined = translateBack * rotation * translateTo;
-            //var topLeft = Vector3.Transform(new Vector3(position.X, position.Y + Size.Y, 0), combined);
-            //var downRight = Vector3.Transform(new Vector3(position.X + Size.X, position.Y, 0), combined);
-            //return new Rectangle((int)topLeft.X, (int)topLeft.Y, (int)(downRight.X - topLeft.X), (int)(downRight.Y - topLeft.Y));
         }
 
         public Rectangle GetRectangleWithOrigin(Vector2 position)
         {
-            //return new Rectangle((int)(position.X -Origin.X), (int)(position.Y-Origin.Y), (int)Size.X, (int)Size.Y);\
-
-
             var rotation = Matrix.CreateRotationZ(DefaultRotation + Rotation);
             var translateTo = Matrix.CreateTranslation(new Vector3(position, 0));
             var translateBack = Matrix.CreateTranslation(-new Vector3(position, 0));
@@ -185,21 +164,6 @@ namespace SmartPackmans.GameSystem
         /// <returns></returns>
         private bool Intersects(Rectangle rect, Vector2 circle, float radius)
         {
-            // Source: http://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection/402010#402010
-            //circleDistance.x = abs(circle.x - rect.x);
-            //circleDistance.y = abs(circle.y - rect.y);
-
-            //if (circleDistance.x > (rect.width / 2 + circle.r)) { return false; }
-            //if (circleDistance.y > (rect.height / 2 + circle.r)) { return false; }
-
-            //if (circleDistance.x <= (rect.width / 2)) { return true; }
-            //if (circleDistance.y <= (rect.height / 2)) { return true; }
-
-            //cornerDistance_sq = (circleDistance.x - rect.width / 2) ^ 2 +
-            //                     (circleDistance.y - rect.height / 2) ^ 2;
-
-            //return (cornerDistance_sq <= (circle.r ^ 2));
-
             Vector2 circleDistance = new Vector2(Math.Abs(circle.X - rect.X - rect.Width/2), Math.Abs(circle.Y - rect.Y - rect.Height/2));
             if (circleDistance.X > rect.Width/2f + radius) return false;
             if (circleDistance.Y > rect.Height/2f + radius) return false;
@@ -210,8 +174,6 @@ namespace SmartPackmans.GameSystem
             double cornerDistSq = Math.Pow(circleDistance.X - rect.X/2f, 2) +
                                   Math.Pow(circleDistance.Y - rect.Height/2f, 2);
             return cornerDistSq <= Math.Pow(radius, 2);
-
         }
-        
     }
 }

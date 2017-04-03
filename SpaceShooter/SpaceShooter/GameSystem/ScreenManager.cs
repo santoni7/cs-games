@@ -15,12 +15,10 @@ namespace SpaceShooter.GameSystem
     {
         /// <summary>
         /// Default: ScreenManager
-        /// Caution: should not be changed, though can be
+        /// Caution: should not be changed
         /// </summary>
         public string Tag { get; set; }
-        /// <summary>
-        /// Not used, leave null
-        /// </summary>
+
         public Texture2D Texture { get; set; }
 
         public SpaceShooterGame Game { get; }
@@ -64,7 +62,6 @@ namespace SpaceShooter.GameSystem
                 screen.Initialize();
             screen.ScreenState = ScreenState.Active;
             activeScreen = screen;
-            //SetActiveBackground();
         }
 
         public void SetActiveScreen(string tag, bool shouldInit = true)
@@ -98,15 +95,12 @@ namespace SpaceShooter.GameSystem
         }
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            // TODO: Update draw, draw background layer to rendertarger etc
             backgroundScreen?.Draw(spriteBatch, gameTime);
             activeScreen?.Draw(spriteBatch, gameTime);
         }
 
         public void Update(GameTime gameTime)
-        {
-            // TODO: Update "update" method
-            
+        {            
             activeScreen?.Update(gameTime);
         }
         public override int GetHashCode()

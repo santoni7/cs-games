@@ -7,13 +7,13 @@ namespace SpaceShooter.GameSystem
 {
     public class GameObjectCollection :IDisposable
     {
+        //readonly
+        public List<IGameObject> Set { get; private set; }
+
         public GameObjectCollection()
         {
             Set = new List<IGameObject>();
         }
-
-        //readonly
-        public List<IGameObject> Set { get; private set; }
 
         public IGameObject FindGameObject(string tag)
         {

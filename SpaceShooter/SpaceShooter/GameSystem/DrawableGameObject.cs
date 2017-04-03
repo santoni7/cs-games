@@ -6,9 +6,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceShooter.GameSystem
 {
-    /// <summary>
-    /// Made for testing purposes
-    /// </summary>
     public class DrawableGameObject : IDrawableGameObject, IMovableGameObject
     {
         public Vector2 Position { get; set; }
