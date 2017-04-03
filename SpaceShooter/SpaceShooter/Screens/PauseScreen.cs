@@ -48,11 +48,6 @@ namespace SpaceShooter.Screens
 
         }
 
-        public override void Initialize()
-        {
-            //throw new NotImplementedException();
-        }
-
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             int dy = 50;

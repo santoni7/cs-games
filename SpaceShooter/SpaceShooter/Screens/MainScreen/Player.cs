@@ -81,19 +81,15 @@ namespace SpaceShooter.Screens
                     lastFired = DateTime.Now;
                 }
             }
-            //List<Bullet> toDeleteList = new List<Bullet>();  //MOVED TO MainScreen.Update
             foreach (var bullet in Bullets)
             {
                 bullet.Update(gameTime);
-                //if (bullet.TTL <= 0) toDeleteList.Add(bullet);
             }
-            //toDeleteList.ForEach(x=>Bullets.Remove(x));
             
         }
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            //spriteBatch.Draw(_texture, null, Position.CreateRectangle(Size), null, new Vector2(_texture.Width/2, _texture.Height/2),0);
             playerSprite.Draw(Position, spriteBatch, gameTime);
             Bullets.ForEach(x => x.Draw(spriteBatch, gameTime));
         }

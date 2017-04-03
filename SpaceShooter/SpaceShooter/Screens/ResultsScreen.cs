@@ -18,13 +18,6 @@ namespace SpaceShooter.Screens
         private int currentItem = 0;
         public ResultsScreen(string name, ScreenManager screenManager) : base(name, screenManager)
         {
-            //items.Add(new MenuItem()
-            //{
-            //    Caption = "Continue",
-            //    IsHovered = true,
-            //    OnClicked =
-            //       () => { screenManager.ClearBackground(); screenManager.SetActiveScreen("main"); }
-            //});
             items.Add(new MenuItem()
             {
                 Caption = "Restart",
@@ -57,11 +50,6 @@ namespace SpaceShooter.Screens
                    () => { Game.Exit(); }
             });
 
-        }
-
-        public override void Initialize()
-        {
-            //throw new NotImplementedException();
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
